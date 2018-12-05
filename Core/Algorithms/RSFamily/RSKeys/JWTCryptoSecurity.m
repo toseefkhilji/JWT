@@ -260,7 +260,7 @@
     return [self itemsFromPemFileWithName:name byRegex:expression].firstObject;
 }
 + (NSArray *)itemsFromPemFileWithName:(NSString *)name byRegex:(NSRegularExpression *)expression {
-    NSURL *fileURL = [[NSBundle bundleForClass:self.class] URLForResource:name withExtension:@"pem"];
+    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:name withExtension:@"pem"];
     NSError *error = nil;
     NSString *fileContent = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&error];
     
